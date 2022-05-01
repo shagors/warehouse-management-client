@@ -1,37 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import auth from '../Firebase/Firebase.init';
+import {
+    useCreateUserWithEmailAndPassword, useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
+ import {
+     ToastContainer,
+     toast
+ } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import './Signup.css'
 import {
     FcGoogle
 } from 'react-icons/fc';
-import './Login.css'
+import auth from '../Firebase/Firebase.init';
 
-const Login = () => {
+const Signup = () => {
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
+        confirmPass: "",
     });
     const [errors, setErrors] = useState({
         emailError: "",
         passwordError: "",
+        confirmPassError: "",
         othersError: "",
     });
 
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         hookError,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
-    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    const handleEmailChange = (e) => {
+    const handleEmailChange = e => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
         if(validEmail){
@@ -44,7 +50,7 @@ const Login = () => {
         }
     }
 
-    const handlePasswordChange = (e) => {
+    const handlePasswordChange = e => {
         const passwordRegex = /.{6,}/;
         const validPassword = passwordRegex.test(e.target.value);
         if(validPassword){
@@ -56,66 +62,70 @@ const Login = () => {
             setUserInfo({...userInfo, password: ""});
         }
     }
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(userInfo.email, userInfo.password);
+    const handleConfirmPasswordChange = e => {
+        if(e.target.value === userInfo.password){
+            setUserInfo({...userInfo, confirmPass: e.target.value});
+            setErrors({...errors, confirmPassError: ""});
+        }
+        else{
+            setErrors({...errors, confirmPassError: "Password didn't match"});
+            setUserInfo({...userInfo, confirmPass: ""});
+        }
     }
-    
+
+    const handleSignup = e => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(userInfo.email, userInfo.password, userInfo.confirmPass);
+        toast('mail verification send');
+    }
+
     useEffect( () => {
-        const error = hookError || gError;
+        const error = hookError || googleError;
         if(error){
             switch(error?.code){
                 case "auth/invalid-email":
                     toast("Invalid email provided, please provide a valid email");
                     break;
-                case "auth/invalid-password":
-                    toast("Wrong password. Intruder!!")
-                    break;
                 default:
-                    toast("Your email or password wrong")
+                    toast("your email or password wrong")
             }
         }
-    } ,[hookError, gError]);
+    } ,[hookError, googleError]);
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     useEffect( () => {
-        if(user || gUser){
+        if(user || googleUser){
             navigate(from);
         }
-    } ,[user, gUser]);
+    } ,[user, googleUser]);
+
 
     return (
-        <div className='login-container'>
-            <div className="login-title">LOGIN</div>
-            <form className='login-form' onSubmit={handleLogin}>
+        <div className='signup-container'>
+            <div className="signup-title">SignUp</div>
+            <form className='signup-form' onSubmit={handleSignup}>
                 <input type="email" name="" placeholder='Your Email' onChange={handleEmailChange} required/>
                 {errors?.emailError && <p className='error-message'>{errors.emailError}</p>}
                 <input type="password" name="" placeholder='type password' onChange={handlePasswordChange} required/>
                 {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}
-                <button>Login</button>
-                <ToastContainer position="top-center" />
-                <p className='my-2'>Don't have an account ? <Link className='text-decoration-none' to='/signup'>Sign up hear</Link> </p>
+                <input type="password" name="" placeholder='confirm password' onChange={handleConfirmPasswordChange} required/>
+                {errors?.confirmPassError && <p className='error-message'>{errors.confirmPassError}</p>}
+                <button>Signup</button>
+                <ToastContainer position="top-center" autoClose={5000} />
             </form>
-            <button onClick={async () => {
-                    await sendPasswordResetEmail(userInfo.email);
-                    toast('password reset email send');
-                    }}>Forget Password</button>
-                {/* <div className='d-flex align-items-center'>
+
+            <div className='d-flex align-items-center'>
                 <div style={{height: '1px'}} className="w-50 bg-dark"></div>
                 <p className='mt-2 px-2'>Or</p>
                 <div style={{height: '1px'}} className="w-50 bg-dark"></div>
-                </div> */}
-
-                <button onClick = {() => signInWithGoogle()
-                }><FcGoogle className = 'mx-2'
-                style={{fontSize: '25px'}}/>Google Sign in</button>
-
+            </div>
+            <button
+            onClick={() => signInWithGoogle()}><FcGoogle className = 'mx-2' style={{fontSize: '25px'}}/> Google Sign in</button>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
