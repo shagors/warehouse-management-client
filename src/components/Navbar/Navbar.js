@@ -10,8 +10,10 @@ const Navbar = () => {
                 </div>
                 <div>
                     <Link className='md:px-3 px-1' to='/home'>Home</Link>
-                    <Link className='md:px-3 px-1' to='/home'>Orders</Link>
-                    <Link className='md:px-3 px-1' to='/home'>User</Link>
+                    <Link className='md:px-3 px-1' to='/products'>Products</Link>
+                    <Link className='md:px-3 px-1' to='/uploadPd'>Upload-Products</Link>
+                    <Link className='md:px-3 px-1' to='/orders'>Orders</Link>
+                    <Link className='md:px-3 px-1' to='/login'>Login</Link>
                 </div>
             </div>
         </nav>
