@@ -31,6 +31,9 @@ const Login = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const handleEmailChange = (e) => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
@@ -78,8 +81,6 @@ const Login = () => {
         }
     } ,[hookError, gError]);
 
-    const navigate = useNavigate();
-    const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     useEffect( () => {
@@ -98,7 +99,7 @@ const Login = () => {
                 {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}
                 <button>Login</button>
                 <ToastContainer position="top-center" />
-                <p className='my-2'>Don't have an account ? <Link className='text-decoration-none' to='/signup'>Sign up hear</Link> </p>
+                <p className='my-2'>Don't have an account ? <Link className='text-decoration-none text-cyan-800' to='/signup'>Sign up hear</Link> </p>
             </form>
             <button onClick={async () => {
                     await sendPasswordResetEmail(userInfo.email);

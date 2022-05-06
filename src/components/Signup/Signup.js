@@ -36,6 +36,9 @@ const Signup = () => {
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
 
     const handleEmailChange = e => {
         const emailRegex = /\S+@\S+\.\S+/;
@@ -92,8 +95,6 @@ const Signup = () => {
         }
     } ,[hookError, googleError]);
 
-    const navigate = useNavigate();
-    const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     useEffect( () => {
