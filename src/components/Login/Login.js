@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,6 +30,8 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+    const [Cuser] = useAuthState(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -81,11 +83,11 @@ const Login = () => {
         }
     } ,[hookError, gError]);
 
-    const from = location.state?.from?.pathname || '/';
+    const from = location?.state?.from?.pathname || '/';
 
     useEffect( () => {
         if(user || gUser){
-            navigate(from);
+            navigate(from, {replace: true});
         }
     } ,[user, gUser]);
 

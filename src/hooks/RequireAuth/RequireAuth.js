@@ -4,17 +4,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../hooks/RequireAuth/RequireAuth';
 
 const RequireAuth = ({children}) => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const location = useLocation();
-    if(loading){
-        return <p>Loading......</p>
+    if(!user){
+        return <Navigate to='/login' state={{from:location}} replace></Navigate>
     }
-    if(user){
-        return children;
-    }
-    else{
-        return <Navigate to='/login' state={{from: location}} replace></Navigate>
-    }
+    return children;
 };
 
 export default RequireAuth;
