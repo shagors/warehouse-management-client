@@ -15,7 +15,11 @@ const Navbar = () => {
                 <div>
                     <Link className='md:px-3 px-1' to='/home'>Home</Link>
                     <Link className='md:px-3 px-1' to='/uploadPd'>Inventory</Link>
-                    <Link className='md:px-3 px-1' to='/orders'>My Items</Link>
+                    {
+                        user && <>
+                            <Link className='md:px-3 px-1' to='/orders'>My Items</Link>
+                        </>
+                    }
                     <Link className='md:px-3 px-1' to='/blog'>Blog</Link>
                     <span className='md:px-3 px-1'>{user?.email}</span>
                     <span className='md:px-3 px-1'>

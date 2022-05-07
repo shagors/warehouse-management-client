@@ -11,21 +11,7 @@ const UploadProduct = () => {
         const price = event.target.price.value;
         const imgUrl = event.target.imgUrl.value;
 
-        const url = 'http://localhost:5000/uploadPd';
-        fetch(url, {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name, price
-                })
-            })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-            })
-        console.log(name, pDetails,price, imgUrl);
+        
     }
     return (
         <div className='mx-40 upload-container'>

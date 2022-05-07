@@ -19,12 +19,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route Route path='/uploadPd' element={
+        <Route path='/uploadPd' element={
             <UploadProduct></UploadProduct>
         }></Route >
         <Route path='/orders' element={
             <Orders></Orders>
-        }></Route>
+        }>
+        </Route>
         <Route path='/inventory/:inventoryId' element={<InventoryDetails></InventoryDetails>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
