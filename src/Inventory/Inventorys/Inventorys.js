@@ -7,7 +7,7 @@ const Inventorys = () => {
     const [products, setProducts] = useState([]);
 
     useEffect( () => {
-        fetch('services.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setProducts(data));
     } ,[]);
@@ -17,7 +17,7 @@ const Inventorys = () => {
         <div className = 'mx-40 grid md:grid-cols-3 gap-6'>
             {
                 products.map(product => <Inventory
-                key={product.id}
+                key={product._id}
                 product={product}
                 ></Inventory>)
             }

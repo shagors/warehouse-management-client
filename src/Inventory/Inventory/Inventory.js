@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Inventory.css'
 
 const Inventory = ({product}) => {
-    const {id, name, img, description, price, quantity, supplierName} = product;
+    const {_id, name, img, description, price, quantity, supplierName} = product;
     const navigate = useNavigate();
     const navigateToProductDetails = id => {
         navigate(`/inventory/${id}`);
@@ -23,7 +23,7 @@ const Inventory = ({product}) => {
                     </p>
                     <p className='my-2'>Quantity: <span>{quantity}</span></p>
                     <p className='my-2'>Price: $<span>{price}</span></p>
-                    <button onClick={() => navigateToProductDetails(id)} type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                    <button onClick={() => navigateToProductDetails(_id)} type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Update</button>
                     </div>
                 </div>
             </div>
