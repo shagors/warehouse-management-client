@@ -13,6 +13,7 @@ import {
     FcGoogle
 } from 'react-icons/fc';
 import auth from '../Firebase/Firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Signup = () => {
     const [userInfo, setUserInfo] = useState({
@@ -102,6 +103,10 @@ const Signup = () => {
             navigate(from);
         }
     } ,[user, googleUser]);
+
+    if(loading || googleLoading){
+        return <Loading></Loading>
+    }
 
 
     return (

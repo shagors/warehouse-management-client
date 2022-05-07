@@ -8,6 +8,7 @@ import {
     FcGoogle
 } from 'react-icons/fc';
 import './Login.css'
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -62,6 +63,7 @@ const Login = () => {
         }
     }
 
+
     const handleLogin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(userInfo.email, userInfo.password);
@@ -83,6 +85,7 @@ const Login = () => {
         }
     } ,[hookError, gError]);
 
+
     const from = location?.state?.from?.pathname || '/';
 
     useEffect( () => {
@@ -90,6 +93,11 @@ const Login = () => {
             navigate(from, {replace: true});
         }
     } ,[user, gUser]);
+
+    if(loading || gLoading){
+        return <Loading></Loading>
+    }
+
 
     return (
         <div className='login-container'>
