@@ -12,7 +12,7 @@ import NotFound from './Shared/NotFound/NotFound';
 
 function App() {
   return (
-    <div>
+    <div className='bg-slate-200'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

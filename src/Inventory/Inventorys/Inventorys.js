@@ -13,7 +13,7 @@ const Inventorys = () => {
 
 
     return (
-        <div className = 'mx-40 grid grid-cols-3 gap-6'>
+        <div className = 'mx-40 grid md:grid-cols-3 gap-6'>
             {
                 products.map(product => <Inventory
                 key={product.id}
