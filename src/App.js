@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './Blog/Blog';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/inventory/:inventoryId' element={<InventoryDetails></InventoryDetails>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
