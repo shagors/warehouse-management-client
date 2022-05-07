@@ -13,17 +13,18 @@ const UploadProduct = () => {
 
         const url = 'http://localhost:5000/uploadPd';
         fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({
-                name, price
-            }),
-            headers: {
-                'Content-type': 'application/json',
-            },
-        })
-        .then(res => res.json())
-        .then(data => console.log(data)
-        )
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name, price
+                })
+            })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
         console.log(name, pDetails,price, imgUrl);
     }
     return (

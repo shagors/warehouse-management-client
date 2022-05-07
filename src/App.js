@@ -3,7 +3,6 @@ import './App.css';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import Products from './components/Products/Products';
 import Signup from './components/Signup/Signup';
 import UploadProduct from './components/UploadProduct/UploadProduct';
 import RequireAuth from './hooks/RequireAuth/RequireAuth';
@@ -18,7 +17,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/products' element={<Products></Products>}></Route>
         <Route Route path='/uploadPd' element={
             <UploadProduct></UploadProduct>
         }></Route >
