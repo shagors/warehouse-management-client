@@ -21,11 +21,11 @@ const Inventorys = () => {
                 product={product}
                 ></Inventory>)
             }
-            <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
+            <button className="learn-more">
+                <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
                 </span>
-                <Link to='/uploadPd' class="button-text">GO Inventory</Link>
+                <Link to='/uploadPd' className="button-text">GO Inventory</Link>
             </button>
         </div>
     );
