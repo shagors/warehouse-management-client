@@ -1,13 +1,23 @@
+import { data } from 'autoprefixer';
 import React from 'react';
 import useProducts from '../hooks/useProducts/useProducts';
 
 const Orders = () => {
-    const [products] = useProducts();
+    const [products, setProducts] = useProducts();
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Are You Sure');
         if(proceed){
-
+            const url = `http://localhost:5000/products/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const remaining = products.filter(product => product._id !== id);
+                setProducts(remaining);
+            })
         }
     }
     return (
