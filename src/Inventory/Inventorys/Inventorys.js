@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Inventory from '../Inventory/Inventory';
 import './Inventorys.css'
 
@@ -24,7 +25,7 @@ const Inventorys = () => {
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">GO Inventory</span>
+                <Link to='/uploadPd' class="button-text">GO Inventory</Link>
             </button>
         </div>
     );
