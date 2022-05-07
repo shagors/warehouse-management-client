@@ -1,44 +1,56 @@
 [
     {
         "id": 1,
-        "name": "Shoe Modeling",
+        "name": "Dell XPS 2500",
+        "supplierName": "Amazon",
+        "quantity": "10",
         "price": "1300",
-        "description": "Shoe modeling for all kinds of shoes. Dynamic work and color correction and all kinds of works include of this charge",
-        "img": "https://i.ibb.co/59561yj/paul-gaudriault-a-QH9-MAAVNI-unsplash.jpg"
+        "description": "This monitor is ultra modern and synconising monitor and also its sync master",
+        "img": "https://i.pcmag.com/imagery/reviews/05R7ApclhnnV0xTx4drU4BE-1.fit_lim.size_625x365.v1617290389.jpg"
     },
     {
         "id": 2,
-        "name": "Face Wash",
+        "name": "Samsung SyncMaster",
+        "supplierName": "E-Bay",
+        "quantity": "10",
         "price": "1000",
-        "description": "Facewash is natural images you see that imag is naturak and cool and all kinds of works include of this charge",
-        "img": "https://i.ibb.co/sW4H2nJ/cierra-henderson-LWIQp-0-b98-unsplash.jpg"
+        "description": "This monitor has ultra modern features and save electricity power.Save Your Eve protection",
+        "img": "https://cdn.thewirecutter.com/wp-content/media/2020/09/24inchmonitor-2048px-2421.jpg"
     },
     {
         "id": 3,
-        "name": "Juice",
+        "name": "Viewsonic",
+        "supplierName": "Alibaba",
+        "quantity": "10",
         "price": "1200",
-        "description": "This juice is only jar we modified and creative image for that product and all kinds of works include of this charge",
-        "img": "https://i.ibb.co/MNMBNbK/tyler-nix-JN7-JJo-Ldvjs-unsplash.jpg"
+        "description": "This products gives you extra smoothy gaming performance and image contrast view as you seen realstic",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70jXkjiMuffupnNxn2efRkBC9X41ZE3VH6g&usqp=CAU"
     },
     {
         "id": 4,
-        "name": "Watch",
+        "name": "LG Ultra Thin",
+        "supplierName": "Daraz",
+        "quantity": "10",
         "price": "1800",
-        "description": "Watch is extra luxary products and its represent best way and it needs color and contrast solution include of this charge",
-        "img": "https://i.ibb.co/5BtH1hP/pat-taylor-12-V36-G17-Ib-Q-unsplash.jpg"
+        "description": "This monitor ULtra slim and gaming monitor its HDR10+ gives you montion view picture and high resulation video",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6euOy3dhcY_GWO3UmdYAZHVwseCgNiyPeRg&usqp=CAU"
     },
     {
         "id": 5,
-        "name": "Food",
+        "name": "Huawei Slim",
+        "supplierName": "Huawei",
+        "quantity": "10",
         "price": "1300",
-        "description": "Food is natural and freshness. We think its value and make it creative for poster for customer",
-        "img": "https://i.ibb.co/vB8VDrf/mae-mu-I7-A-p-HLc-QK8-unsplash.jpg"
+        "description": "This monitor ultra width and gives you eye comfort picture and natural imaging performance",
+        "img": "https://images.thedailystar.net/sites/default/files/feature/images/best_monitors_1.jpg"
     },
     {
         "id": 6,
-        "name": "Fashion",
+        "name": "Philips Sync",
+        "supplierName": "Amazon",
+        "quantity": "10",
         "price": "2000",
-        "description": "All provides all kinds of fashion picture so you can trust me for great images for your products",
-        "img": "https://i.pinimg.com/originals/50/53/c9/5053c9c8a9684cb3c61dec844d994e50.jpg"
+        "description": "This monitor is ultra modern and synconising monitor and also its sync master",
+        "img": "https://cdn.mos.cms.futurecdn.net/afV6tkJEJAdw3o7qqtqxTG-1200-80.jpg"
     }
 ]
