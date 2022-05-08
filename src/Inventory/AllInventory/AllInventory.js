@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts/useProducts';
+import Loading from '../../Shared/Loading/Loading';
 import AllInventoryCard from '../AllInventoryCard/AllInventoryCard';
 
 const AllInventory = () => {
     const [products] = useProducts();
+    if(!products){
+        return <Loading></Loading>
+    }
     return (
         <div className='mx-40'>
             <h1 className='text-center text-4xl my-5 text-teal-800'>Products In Store Items: {products.length}</h1>

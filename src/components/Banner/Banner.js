@@ -45,7 +45,7 @@ const Banner = () => {
                     alt="..."
                   />
                   <div className="carousel-caption hidden md:block absolute text-center">
-                    <h5 className="text-3xl text-orange-600">Second slide label</h5>
+                    <h5 className="text-3xl text-orange-600">LG Extra aspect gaming</h5>
                     <p className='text-xl text-orange-600'>This Monitor has real time sync and Aspect ration</p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ const Banner = () => {
                     alt="..."
                   />
                   <div className="carousel-caption hidden md:block absolute text-center">
-                    <h5 className="text-3xl text-orange-600">Third slide label</h5>
+                    <h5 className="text-3xl text-orange-600">Samsung SyncMaster</h5>
                     <p className='text-xl text-orange-600'>This monitor HDR+ and Gaming Booster</p>
                   </div>
                 </div>

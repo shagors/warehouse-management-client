@@ -12,7 +12,7 @@ const InventoryDetails = () => {
      const onSubmit = data => console.log(data);
 
     useEffect( () => {
-        const url = `http://localhost:5000/products/${inventoryId}`
+        const url = `https://aqueous-lake-72279.herokuapp.com/${inventoryId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))
