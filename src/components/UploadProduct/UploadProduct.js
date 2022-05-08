@@ -1,27 +1,38 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
+import { useForm } from "react-hook-form";
 import './UploadProduct.css'
 
 const UploadProduct = () => {
-    const handleUpload = (event) => {
-        event.preventDefault();
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        const url = `http://localhost:5000/products`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+        })
+    };
 
-        const name = event.target.name.value;
-        const pDetails = event.target.pDetails.value;
-        const price = event.target.price.value;
-        const imgUrl = event.target.imgUrl.value;
 
-        
-    }
     return (
         <div className='mx-40 upload-container'>
             <h2 className='text-2xl upload-title'>Upload Product</h2>
-            <form className='upload-form' onSubmit={handleUpload}>
-                <input type="text" name="name" placeholder='Product Name'required/>
-                <input type="text" name="pDetails" placeholder='Product details' />
-                <input type="text" name="price" placeholder='type price' required/>
-                <input type="text" name="imgUrl" placeholder='type image url'/>
-                <button>Upload</button>
+            <form className='' onSubmit={handleSubmit(onSubmit)}>
+                <input placeholder='product name' {...register("name", { required: true })} />
+                <input placeholder='product supplier' {...register("supplierName", { required: true })} />
+                <input placeholder='product quantity' type='number' {...register("quantity", { required: true })} />
+                <input placeholder='product price' type='number' {...register("price", { required: true })} />
+                <input placeholder='product description' {...register("description", { required: true, maxLength: 30 })} />
+                <input placeholder='product image link' {...register("img", { required: true })} />
+                <button type='submit'>Add product</button>
                 <ToastContainer position="top-center" />
             </form>
         </div>

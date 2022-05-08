@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllInventoryCard = ({product}) => {
-    const {_id, name, img, description, price, quantity, supplierName} = product;
+    const { name, img, description, price, quantity, supplierName} = product;
     return (
         <div>
             <div className="rounded-lg shadow-lg bg-white max-w-sm mx-auto">
