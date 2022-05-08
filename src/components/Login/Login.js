@@ -3,7 +3,7 @@ import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword,
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import auth from '../Firebase/Firebase.init';
+import auth from '../../Firebase.init';
 import {
     FcGoogle
 } from 'react-icons/fc';

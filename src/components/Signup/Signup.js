@@ -12,7 +12,7 @@ import './Signup.css'
 import {
     FcGoogle
 } from 'react-icons/fc';
-import auth from '../Firebase/Firebase.init';
+import auth from '../../Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
 const Signup = () => {

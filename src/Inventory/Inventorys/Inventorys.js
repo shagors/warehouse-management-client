@@ -16,7 +16,7 @@ const Inventorys = () => {
     return (
         <div className = 'mx-40 grid md:grid-cols-3 gap-6'>
             {
-                products.slice(0,6).map(product => <Inventory
+                products?.slice(0,6)?.map(product => <Inventory
                 key={product._id}
                 product={product}
                 ></Inventory>)

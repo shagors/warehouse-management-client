@@ -18,7 +18,7 @@ const AllInventory = () => {
 
             <div className = 'grid md:grid-cols-3 gap-6'>
                 {
-                    products.map(product => <AllInventoryCard
+                    products?.map(product => <AllInventoryCard
                     key={product._id} product={product}
                     ></AllInventoryCard>)
                 }
