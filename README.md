@@ -1,6 +1,6 @@
 # Warehouse Management
 
-This project was tailwind with [Create React App](https://github.com/facebook/create-react-app).
+[WareHouse Management](https://warehouse-management-45071.web.app/).
 
 ## What Special Features My site 
 
