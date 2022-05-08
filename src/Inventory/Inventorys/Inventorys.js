@@ -16,7 +16,7 @@ const Inventorys = () => {
     return (
         <div className = 'mx-40 grid md:grid-cols-3 gap-6'>
             {
-                products.map(product => <Inventory
+                products.slice(0,6).map(product => <Inventory
                 key={product._id}
                 product={product}
                 ></Inventory>)
@@ -25,7 +25,7 @@ const Inventorys = () => {
                 <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
                 </span>
-                <Link to='/inventory' className="button-text">GO Inventory</Link>
+                <Link to='/allinventory' className="button-text">GO Inventory</Link>
             </button>
         </div>
     );

@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Signup from './components/Signup/Signup';
 import UploadProduct from './components/UploadProduct/UploadProduct';
 import RequireAuth from './hooks/RequireAuth/RequireAuth';
+import AllInventory from './Inventory/AllInventory/AllInventory';
 import InventoryDetails from './Inventory/InventoryDetails/InventoryDetails';
 import Orders from './Orders/Orders';
 import Footer from './Shared/Footer/Footer';
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/allinventory' element={<AllInventory></AllInventory>}></Route>
         <Route path='/uploadPd' element={
             <UploadProduct></UploadProduct>
         }></Route >

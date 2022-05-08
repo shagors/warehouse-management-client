@@ -14,6 +14,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <Link className='md:px-3 px-1' to='/home'>Home</Link>
+                    <Link className='md:px-3 px-1' to='/allinventory'>Products</Link>
                     {
                         user && <>
                             <Link className='md:px-3 px-1' to='/uploadPd'>Upload Products</Link>
