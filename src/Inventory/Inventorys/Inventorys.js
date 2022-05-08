@@ -25,7 +25,7 @@ const Inventorys = () => {
                 <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
                 </span>
-                <Link to='/uploadPd' className="button-text">GO Inventory</Link>
+                <Link to='/inventory' className="button-text">GO Inventory</Link>
             </button>
         </div>
     );
