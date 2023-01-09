@@ -7,7 +7,7 @@ const OrderList = ({product}) => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are You Sure');
         if(proceed){
-            const url = `https://aqueous-lake-72279.herokuapp.com/products/${id}`;
+            const url = `https://warehouse-e8dy.onrender.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

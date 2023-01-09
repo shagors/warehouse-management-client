@@ -7,7 +7,7 @@ const UploadProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `https://aqueous-lake-72279.herokuapp.com/products`;
+        const url = `https://warehouse-e8dy.onrender.com/products`;
         fetch(url, {
             method: 'POST',
             headers: {

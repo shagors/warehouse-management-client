@@ -70,7 +70,7 @@ const Login = () => {
         const email = userInfo.email;
         const password = userInfo.password;
         await signInWithEmailAndPassword(email, password);
-        const {data} = await axios.post('https://aqueous-lake-72279.herokuapp.com/login', {email});
+        const {data} = await axios.post('https://warehouse-e8dy.onrender.com/login', {email});
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, {replace: true});
     }

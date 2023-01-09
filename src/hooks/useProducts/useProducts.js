@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://aqueous-lake-72279.herokuapp.com/products')
+        fetch('https://warehouse-e8dy.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
